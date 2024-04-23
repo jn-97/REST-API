@@ -1,4 +1,4 @@
-from rest_framework import APIView
+from rest_framework.views import APIView
 from rest_framework.response import Response
 from .serializers import *
 
@@ -8,4 +8,4 @@ class StudentList(APIView):
 
         model = Student.objects.all() 
         serializer = StudentSerializer(model, many=True) 
-        return Response(serializer.date)
+        return Response(serializer.data)
